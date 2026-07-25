@@ -1,113 +1,36 @@
 /**
- * Type definitions for DGL application
+ * Core type definitions for Develop Ghana Lab
+ * Expanded in later phases (Auth, Products, Blog, Payments)
  */
 
-export enum UserRole {
-  ADMIN = 'ADMIN',
-  CUSTOMER = 'CUSTOMER',
-  DEVELOPER = 'DEVELOPER',
-  EDITOR = 'EDITOR',
-}
-
-export enum SubscriptionStatus {
-  ACTIVE = 'ACTIVE',
-  INACTIVE = 'INACTIVE',
-  CANCELLED = 'CANCELLED',
-  EXPIRED = 'EXPIRED',
-}
-
-export enum ProductStatus {
-  DRAFT = 'DRAFT',
-  PUBLISHED = 'PUBLISHED',
-  ARCHIVED = 'ARCHIVED',
-}
-
-export enum PaymentStatus {
-  PENDING = 'PENDING',
-  COMPLETED = 'COMPLETED',
-  FAILED = 'FAILED',
-  REFUNDED = 'REFUNDED',
-}
+export type UserRole = 'user' | 'admin' | 'developer' | 'editor';
 
 export interface User {
-  _id: string;
+  id: string;
   email: string;
-  firstName: string;
-  lastName: string;
+  fullName: string;
   role: UserRole;
-  avatar?: string;
-  verified: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  avatarUrl?: string;
+  createdAt: string;
 }
 
 export interface Product {
-  _id: string;
-  title: string;
+  id: string;
+  name: string;
+  slug: string;
   description: string;
-  category: string;
-  price: number;
-  image: string;
-  status: ProductStatus;
-  developer: string; // User ID
-  ratings: number;
-  downloads: number;
-  createdAt: Date;
-  updatedAt: Date;
+  price: number; // GHS
+  currency: 'GHS';
+  imageUrl?: string;
+  isPublished: boolean;
 }
 
 export interface BlogPost {
-  _id: string;
+  id: string;
   title: string;
   slug: string;
-  content: string;
   excerpt: string;
-  author: string; // User ID
-  category: string;
-  tags: string[];
-  image: string;
+  content: string;
   published: boolean;
-  views: number;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface Subscription {
-  _id: string;
-  user: string; // User ID
-  product: string; // Product ID
-  status: SubscriptionStatus;
-  startDate: Date;
-  endDate?: Date;
-  renewalDate?: Date;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface Payment {
-  _id: string;
-  user: string; // User ID
-  amount: number;
-  currency: string;
-  status: PaymentStatus;
-  stripePaymentIntentId?: string;
-  description: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface ApiResponse<T> {
-  success: boolean;
-  data?: T;
-  error?: string;
-  message?: string;
-}
-
-export interface PaginatedResponse<T> {
-  success: boolean;
-  data: T[];
-  total: number;
-  page: number;
-  pageSize: number;
-  totalPages: number;
+  publishedAt?: string;
 }
