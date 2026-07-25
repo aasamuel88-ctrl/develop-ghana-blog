@@ -1,7 +1,6 @@
 {
   "name": "develop-ghana-lab",
   "version": "1.0.0",
-  "description": "DGL - Enterprise SaaS platform for AI tools, software marketplace, and digital products",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,39 +13,25 @@
     "next": "^15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "typescript": "^5.0.0",
+    "framer-motion": "^12.0.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.0",
+    "class-variance-authority": "^0.7.0",
+    "lucide-react": "^0.441.0",
+    "next-themes": "^0.3.0"
+  },
+  "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "typescript": "^5.0.0",
     "tailwindcss": "^3.4.0",
-    "autoprefixer": "^10.4.0",
     "postcss": "^8.4.0",
-    "framer-motion": "^12.0.0",
-    "next-auth": "^5.0.0",
-    "mongodb": "^6.0.0",
-    "mongoose": "^8.0.0",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.1.0",
-    "zod": "^3.22.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
-    "lucide-react": "^0.394.0",
-    "axios": "^1.6.0",
-    "date-fns": "^2.30.0",
-    "chart.js": "^4.4.0",
-    "react-chartjs-2": "^5.2.0",
-    "stripe": "^14.0.0",
-    "@stripe/react-stripe-js": "^2.0.0",
-    "@stripe/stripe-js": "^3.0.0",
-    "react-hook-form": "^7.48.0",
-    "react-markdown": "^9.0.0"
-  },
-  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^15.2.0",
     "@tailwindcss/forms": "^0.5.0",
-    "@tailwindcss/typography": "^0.5.0",
-    "tailwind-merge": "^2.2.0",
-    "eslint": "^8.50.0",
-    "eslint-config-next": "^15.2.0"
+    "@tailwindcss/typography": "^0.5.0"
   },
   "engines": {
     "node": ">=18.0.0"
