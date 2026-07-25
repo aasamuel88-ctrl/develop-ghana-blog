@@ -5,9 +5,17 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatGHS(amount: number) {
+/** Format amount stored in pesewas as GHS currency */
+export function formatGHS(pesewas: number) {
   return new Intl.NumberFormat('en-GH', {
     style: 'currency',
     currency: 'GHS',
-  }).format(amount);
+  }).format(pesewas / 100);
+}
+
+export function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
 }
